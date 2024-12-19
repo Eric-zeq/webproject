@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stroll</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js">
+    </script>
+</head>
+<body>
+    <header id="header_model">
+        <div id="header_logo"><a href=""><img src="img/logo/logo.jpg" alt="logo"></a>
+        </div>
+        <div id="header_search_bar_container">
+            <input id="header_search_bar" type="text" placeholder="Search...">
+            <a href="">
+                <img src="img/logo/search.svg" alt="search">
+            </a>
+        </div>
+    </header>
+    <div id="main_container_model">
+        <div id="main_container_left_menu">
+            <div>
+                <a href="#" onclick="show_account_home('discover')">
+                    <img src="img/logo/discover.svg" alt="Discover">
+                    <span>Discover</span>
+                </a>
+            </div>
+            <div>
+                <a href="javascript:void(0)" onclick="showPostContent('send_post_model')">
+                    <img src="img/logo/post.svg" alt="post">
+                    <span>Post</span>
+                </a>
+            </div>  
+            <div>
+                <a href=""><img src="img/logo/notificaiton.svg" alt="notificaiton">
+                    <span>Notificaiton</span>
+                </a>
+            </div>
+            <div id="account_tags_btn" style="background-color:#259A75;">
+                <a href="javascript:void(0)" onclick="showLoginModel()">
+                    <span style="color: white; margin-left: 35%;">Login</span>
+                </a>
+            </div>
+            <div id="account_tags">
+                <a href="#" onclick="show_account_home('account')">
+                    <img id="account_icon" src="img/logo/account.jpg" alt="account">
+                    <span>Account</span>
+                </a>
+            </div>
+            <div id="trending_tags">
+                <a href="">
+                    <img src="img/logo/more.svg" alt="more">
+                    <span>More</span>
+                </a>
+            </div>
+        </div>
+        <div id="main_container_right_menu">
+
+            <div class="category" id="category_container">
+                <div><a href="">Top</a></div>
+                <div><a href="">latest</a></div>
+                <div><a href="">free</a></div>
+                <div><a href="">travel</a></div>
+                <div><a href="">movie</a></div>
+                <div><a href="">trousseau</a></div>
+                <div><a href="">food</a></div>
+                <div><a href="">science</a></div>
+                <div><a href="">technology</a></div>
+            </div>
+            <div id="post_container">
+                <div class="post_column" id="post5">
+                </div>
+                 <div class="post_column" id="post1">
+                 </div>
+                 <div class="post_column" id="post2">
+                 </div>
+                 <div class="post_column" id="post3">
+                 </div>
+                 <div class="post_column" id="post4">
+                 </div>
+            </div>
+        </div>
+        <div id="user_account_home">
+            <div id="user_account_home_header">
+                <img src="img/logo/account.jpg" alt="user-image">
+                <div id="user_account_home_header_info">
+                    <h2>EricZQ</h2>
+                    <P>UserID:<span>&nbsp;123456789</span></P>
+                    <P>I am my different firworks!!!!</P>
+                    <p><span>20&nbsp;</span></span><a href="">followers</a><span>&nbsp;&nbsp;58&nbsp;</span><a href="">following</a></p>
+                </div>
+            </div>
+            <div id="home-content">
+                <div id="home-content-menu">
+                    <a id="home-content-menu-posts" style="background-color: #f2f2f2;" onclick="choose_home(this.id)" href="#">Posts</a>
+                    <a id="home-content-menu-collections" onclick="choose_home(this.id)" href="#">Collections</a>
+                    <a id="home-content-menu-likes" onclick="choose_home(this.id)" href="#">Likes</a>
+                </div>
+                <div id="home-content-posts">
+                    <div id="post_container">
+                        <div class="post_column" id="post-5">
+                        </div>
+                         <div class="post_column" id="post-1">
+                         </div>
+                         <div class="post_column" id="post-2">
+                         </div>
+                         <div class="post_column" id="post-3">
+                         </div>
+                         <div class="post_column" id="post-4">
+                         </div>
+                    </div>
+                </div>
+                <div id="home-content-collections">
+                    No collections yet.
+                </div>
+                <div id="home-content-likes">
+                    No likes yet.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="login_modal">
+        <div id="login_modal_content">
+            <div id="login_modal_picture"><img src="img/pg.jpeg" alt="login"></div>
+            <a id="offpage" onclick="closeLoginModel()"><img src="img/logo/off.svg" alt="offpage"></a>
+            <div id="login_modal_header">
+                <h2>Login</h2>
+                <form  action="" id="login_form">
+                    <input id="login_email" name="email" class="form-control" type="email" placeholder="Email"><br>
+                    <input id="login_password" password="password" class="form-control" type="password" placeholder="Password"> <br>
+                    <a id="forgot_password_link" href="">Forgot password?</a>
+                    <p id="login_error_message">Incorrect email or password.</p>
+                    <button class="form-control" onclick="loginValidation()" type="submit">Login</button><br>
+                    <p id="signup_text">Don't have an account? <a  id="signup_link" onclick="showSignUpModel()">Sign up</a></p>
+               </form>
+            </div>
+            <div id="sign_up_modal_content">
+                <h2>Sign up</h2>
+                <form action="">
+                    <input class="form-control1" type="email" placeholder="Email"><br>
+                    <input class="form-control1" type="password" placeholder="Password"><br>
+                    <input class="form-control1" type="password" placeholder="Verify Password"><br>
+                    <div id="verifact_code_link">
+                        <input type="text">
+                        <a href="">Get verifact code</a>
+                    </div>
+                    <div id="conditions">
+                        <input type="checkbox" name="conditions_checkbox" id="conditions_checkbox">
+                        <label for="conditions_checkbox">I alread read and accept the <a href="">terms and conditions</a></label>
+                    </div>
+                    <button class="form-control1" type="submit">Sign up</button><br>
+                    <p id="login_text">Already have an account? <a id="login_link" onclick="returnToLogin()">Login</a></p>
+
+            </div>
+        </div>
+    </div>
+    <div id="content">
+        <a id="content-close" onclick="closePostContent('content')" href="#"><img src="img/logo/off.svg" alt="off"></a>
+        <div id="content-header">
+            <div id="content-header-left">
+                <img src="img/logo/account.jpg" alt="user-image">
+                <h4>EricZQ</h4>
+                <div id="content-header-left-menu"><img src="img/logo/fo.svg" alt="focus"></div>
+            </div>
+            <img id="share_icon" src="img/logo/share.svg" alt="share_icon ">          
+        </div>
+     
+        <div id="content-body">
+            <div id="content-body-left">
+                <!-- <img id="post-image" src="img/post2.jpeg" alt="post_image">              -->
+            </div>
+            <div id="content-body-right">
+                <div id="post-details">
+                    <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
+                    <div>
+                        <p>J7 Orange juice has been drinking for four or five years, and now it's a level that can't be cut off!</p>
+                        <p>Wake up in the morning, a glass of ice with orange c American, basically two days a bucket!</p>
+                        <p>Other flavours of fruit juice basically have a choice, only orange juice I only buy it!</p>
+                        <p>🍊 Ingredients list: orange juice original juice without additives</p>
+                        <p>🍊Taste: slightly bitter, with pulp particles</p>
+                        <p>🍊Price: between Rs 150-210</p>
+                        <p>The same brand of plastic bottles are freshly squeezed orange juice, taste better and purer, but need to be refrigerated, so stock up usually buy cartons</p>
+                        <p id="post-tags">#orange juice #Russian food #Russian goodies #Russian supermarket goodies #Russian goodies #Russian snacks #Russian life </p>  
+                        <p id="post-date">2021-05-10</p>
+                    </div>
+                </div>
+            </div>  
+        </div>
+        <div id="content-footer">
+            <div id="post-review">
+                <div id="post-review-left">
+                    <img src="img/logo/account.jpg" alt="user-image">
+                    <input onfocus="writeReview()" type="text" id="comment-input" placeholder="Write a comment...">
+                </div>
+                <div id="post-review-right">
+                    <img src="img/logo/like.svg" alt="like">
+                    <span>10 &nbsp;&nbsp;</span>
+                    <img src="img/logo/love.svg" alt="love">
+                    <span>30&nbsp;&nbsp;</span>
+                    <img src="img/logo/review.svg" alt="comment">
+                    <span>10</span>
+                </div>                 
+            </div>
+            <div id="post-review1">
+                <input type="text">
+                <div id="post-review1-bottom-right">                   
+                    <a href="#"><img src="img/logo/imoji.svg" alt="biaoqing"></a>
+                </div>
+                <div id="post-review1-bottom-left">
+                    <a href="#">send</a>                             
+                    <a onclick="hideReview()" href="#">cancel</a>
+                </div>                   
+            </div>
+            <div id="comment-header">
+                <p>This post has 10 comments</p>
+                <div id="comment-details">
+                    <img src="img/logo/account.jpg" alt="user-image">
+                    <div id="comment-content">
+                        <div id="main-comment">
+                            <p>EricZQ</p>
+                            <p>this is a comment</p>
+                            <p>2021-05-10</p>
+                            <a href=""><img src="img/logo/like.svg" alt="like"></a>
+                            <span>10+ &nbsp;&nbsp;</span>
+                            <a href=""><img src="img/logo/review.svg" alt="comment"></a>
+                            <span>reply</span> 
+                        </div>
+                        <div id="sub-comment-insert">
+                            <div id="sub-comment">
+                                <img src="img/logo/account.jpg" alt="user-image">
+                                <div id="sub-comment-content">
+                                    <p>EricZQ</p>
+                                    <p>this is a sub-comment</p>
+                                    <p>2021-05-10</p>
+                                    <a href=""><img src="img/logo/like.svg" alt="like"></a>
+                                    <span>10+ &nbsp;&nbsp;</span>
+                                    <a href=""><img src="img/logo/review.svg" alt="comment"></a>
+                                    <span>reply</span> 
+                                 </div>
+                            </div>
+                            <div id="sub-comment">
+                                <img src="img/logo/account.jpg" alt="user-image">
+                                <div id="sub-comment-content">
+                                    <p>EricZQ reply to @terey</p>
+                                    <p>this is a reply to sub-comment</p>
+                                    <p>2021-05-10</p>
+                                    <a href=""><img src="img/logo/like.svg" alt="like"></a>
+                                    <span>10+ &nbsp;&nbsp;</span>
+                                    <a href=""><img src="img/logo/review.svg" alt="comment"></a>
+                                    <span>reply</span> 
+                                 </div>
+                            </div>
+                            <a id="sub-comment-insert-btn" href="#">load more replies</a>                           
+                        </div>                                             
+                    </div>
+                </div>
+                <div id="comment-details">
+                    <img src="img/logo/account.jpg" alt="user-image">
+                    <div id="comment-content">
+                        <div id="main-comment">
+                            <p>EricZQ</p>
+                            <p>this is a comment</p>
+                            <p>2021-05-10</p>
+                            <a href=""><img src="img/logo/like.svg" alt="like"></a>
+                            <span>10+ &nbsp;&nbsp;</span>
+                            <a href=""><img src="img/logo/review.svg" alt="comment"></a>
+                            <span>reply</span> 
+                        </div>
+                        <div id="sub-comment-insert">
+                            <div id="sub-comment">
+                                <img src="img/logo/account.jpg" alt="user-image">
+                                <div id="sub-comment-content">
+                                    <p>EricZQ</p>
+                                    <p>this is a sub-comment</p>
+                                    <p>2021-05-10</p>
+                                    <a href=""><img src="img/logo/like.svg" alt="like"></a>
+                                    <span>10+ &nbsp;&nbsp;</span>
+                                    <a href=""><img src="img/logo/review.svg" alt="comment"></a>
+                                    <span>reply</span> 
+                                 </div>
+                            </div>
+                            <div id="sub-comment">
+                                <img src="img/logo/account.jpg" alt="user-image">
+                                <div id="sub-comment-content">
+                                    <p>EricZQ reply to @terey</p>
+                                    <p>this is a reply to sub-comment</p>
+                                    <p>2021-05-10</p>
+                                    <a href=""><img src="img/logo/like.svg" alt="like"></a>
+                                    <span>10+ &nbsp;&nbsp;</span>
+                                    <a href=""><img src="img/logo/review.svg" alt="comment"></a>
+                                    <span>reply</span> 
+                                 </div>
+                            </div>
+                            <a id="sub-comment-insert-btn" href="#">load more replies</a>                           
+                        </div>                                             
+                    </div>
+                </div>                   
+               
+            </div>                          
+        </div>
+    </div>
+    <div id="send_post_model">
+        <div id="post_content">
+            <a id="content-close" onclick="closePostContent('send_post_model')" href="#"><img src="img/logo/off.svg" alt="off"></a>         
+            <div id="post_left">
+                    <input style="display: none;" type="file" name="image" id="image" accept="image/*" onchange="previewImage()">
+                    <img id="post_image_logo" src="./img/logo/upload.svg" alt="image" onclick="uploadImage()">
+            </div>
+            <div id="post_right">
+                <div id="post_right_header">
+                    <img src="./img/logo/account.jpg" alt="">
+                    <h5>Username</h5>
+                </div>
+                <form id="post_form" action="" method="post">
+                    <input id="post_title" type="text" name="post_title" placeholder="Post title">
+                    <textarea id="post_text" name="post_text" placeholder="add your post here..."></textarea>
+                    <div id="post_tags_location">
+                        <div id="post_tags">
+                            <a href="">#tags</a>
+                            <a href="">@username</a>
+                        </div>
+                        <div id="post_location">
+                            <img src="./img/logo/adress.svg" alt="address">
+                            <input type="text" name="post_location" placeholder="Location">
+                        </div>
+                    </div>
+                    <div id="post_options">
+                        <div id="post_options_public"  class="post_options_class">
+                            <img src="./img/logo/public.svg" alt="public">
+                            <label for="is_public">Public</label>
+                            <input type="checkbox" name="is_public" id="is_public">
+                        </div>
+                        <div class="post_options_class">
+                            <img src="./img/logo/noComment.svg" alt="comment">
+                            <label for="allow_comment">Allow comment</label>
+                            <input type="checkbox" name="allow_comment" id="allow_comment">
+                        </div>
+                        <div class="post_options_class">
+                            <img src="./img/logo/hide.svg" alt="like">
+                            <label for="hide_like">Hide likes</label>
+                            <input type="checkbox" name="hide_like" id="hide_like">
+                        </div>
+                        <div class="post_options_class">
+                            <img src="./img/logo/reject.svg" alt="allow_copy">
+                            <label for="allow_copy">Allow copy</label>
+                            <input type="checkbox" name="allow_copy" id="allow_copy">
+                        </div>                   
+                    </div>
+                    <div id="post_buttons">
+                        <a href="#"><img src="./img/logo/saved.svg" alt="saved"></a>
+                        <button type="submit">Post</button>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
