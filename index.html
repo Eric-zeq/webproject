@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>stroll</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="main_container.css">
+    <link rel="stylesheet" href="login_model.css">
+    <link rel="stylesheet" href="post_content.css">
+    <link rel="stylesheet" href="account.css">
+    <link rel="stylesheet" href="send_post.css">
     <script src="index.js">
     </script>
 </head>
@@ -121,12 +127,11 @@
             </div>
         </div>
     </div>
-
-    <div id="login_modal">
-        <div id="login_modal_content">
-            <div id="login_modal_picture"><img src="img/pg.jpeg" alt="login"></div>
+    <div id="login_model">
+        <div id="login_model_content">
+            <div id="login_model_picture"><img src="img/pg.jpeg" alt="login"></div>
             <a id="offpage" onclick="closeLoginModel()"><img src="img/logo/off.svg" alt="offpage"></a>
-            <div id="login_modal_header">
+            <div id="login_model_header">
                 <h2>Login</h2>
                 <form  action="" id="login_form">
                     <input id="login_email" name="email" class="form-control" type="email" placeholder="Email"><br>
@@ -137,7 +142,7 @@
                     <p id="signup_text">Don't have an account? <a  id="signup_link" onclick="showSignUpModel()">Sign up</a></p>
                </form>
             </div>
-            <div id="sign_up_modal_content">
+            <div id="sign_up_model_content">
                 <h2>Sign up</h2>
                 <form action="">
                     <input class="form-control1" type="email" placeholder="Email"><br>
@@ -157,8 +162,8 @@
             </div>
         </div>
     </div>
-    <div id="content">
-        <a id="content-close" onclick="closePostContent('content')" href="#"><img src="img/logo/off.svg" alt="off"></a>
+    <div id="post_content">
+        <a id="content-close" onclick="closePostContent('post_content')" href="#"><img src="img/logo/off.svg" alt="off"></a>
         <div id="content-header">
             <div id="content-header-left">
                 <img src="img/logo/account.jpg" alt="user-image">
@@ -303,7 +308,7 @@
         </div>
     </div>
     <div id="send_post_model">
-        <div id="post_content">
+        <div id="send_post_content">
             <a id="content-close" onclick="closePostContent('send_post_model')" href="#"><img src="img/logo/off.svg" alt="off"></a>         
             <div id="post_left">
                     <input style="display: none;" type="file" name="image" id="image" accept="image/*" onchange="previewImage()">

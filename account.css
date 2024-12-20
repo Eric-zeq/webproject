@@ -1,0 +1,83 @@
+#user_account_home {
+    width: 100%;
+    margin-left: 280px;
+    overflow: auto;
+    display: none;
+}
+
+#user_account_home_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#user_account_home_header img {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+}
+
+#user_account_home_header_info {
+    margin-left: 50px;
+}
+
+#user_account_home_header_info h2 {
+    margin: 0px;
+} 
+
+
+#user_account_home_header_info p:nth-child(3) {
+    max-width: 300px;
+}
+
+#user_account_home_header_info a {
+    color: black;
+    text-decoration: none;
+
+}
+
+#home-content {
+    margin-top: 50px;
+}
+
+#home-content-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#home-content-menu a {
+    margin: 0 10px;
+    color: black;
+    text-decoration: none;
+    font-size: larger;
+    font-weight: bold;
+    /* border: 1px solid black; */
+    width: 110px;
+    height: 40px;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    margin-right: 100px;
+    border-radius: 40px;
+    /* background-color: #f2f2f2; */
+    background-color: white;
+}
+
+#home-content-menu a:hover {
+    background-color: #f2f2f2;
+
+}
+
+#home-content-posts {
+    display: block;
+}
+
+#home-content-collections {
+    display: none;
+    text-align: center;
+}
+
+#home-content-likes {
+    display: none;
+    text-align: center;
+}

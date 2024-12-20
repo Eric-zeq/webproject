@@ -1,3 +1,4 @@
+// insert posts into the page
 function insert_post(id,img_url, title) {
     var div_post_arr = document.getElementById(id);
     var div_post = document.createElement("div");
@@ -9,23 +10,25 @@ function insert_post(id,img_url, title) {
     div_post_arr.appendChild(div_post);
     console.log("Post added!");
     document.getElementById("post_column_img_a").addEventListener("click", function() {
-        showPostContent('content');
+        showPostContent('post_content');
     })
 }
 
-
+// show login model
 function  showLoginModel() {
-    document.getElementById("login_modal").style.display = "block";
+    document.getElementById("login_model").style.display = "block";
     document.getElementById("header_model").style.opacity = "0.5";
     document.getElementById("main_container_model").style.opacity = "0.5";
 }
 
+// close login model
 function closeLoginModel() {
-    document.getElementById("login_modal").style.display = "none";
+    document.getElementById("login_model").style.display = "none";
     document.getElementById("header_model").style.opacity = "1";
     document.getElementById("main_container_model").style.opacity = "1";
 }
 
+// login validation
 function loginValidation() {
     document.getElementById("login_form").addEventListener("submit", function(event) {
         event.preventDefault();
@@ -42,18 +45,20 @@ function loginValidation() {
     })
 }
 
+// show sign up model
 function showSignUpModel() {
-    document.getElementById("login_modal_header").style.display = "none";
-    document.getElementById("sign_up_modal_content").style.display = "block";   
+    document.getElementById("login_model_header").style.display = "none";
+    document.getElementById("sign_up_model_content").style.display = "block";   
 }
 
-
+// return to login 
 function returnToLogin() {
-    document.getElementById("login_modal_header").style.display = "block";
-    document.getElementById("sign_up_modal_content").style.display = "none";
+    document.getElementById("login_model_header").style.display = "block";
+    document.getElementById("sign_up_model_content").style.display = "none";
 }
 
 
+// show post content page
 function showPostContent(id){
     var content = document.getElementById(id);
     content.style.display = "block";
@@ -63,6 +68,7 @@ function showPostContent(id){
       
 }
 
+// close post content page
 function closePostContent(id){
     var content = document.getElementById(id);
     content.style.display = "none";
@@ -71,6 +77,7 @@ function closePostContent(id){
     document.getElementById("main_container_right_menu").style.overflow = "auto";
 }
 
+// show write review page
 function writeReview() {
     var x = document.getElementById("post-review1");
     var y = document.getElementById("post-review");
@@ -78,6 +85,7 @@ function writeReview() {
     x.style.display = "flex";
 }
 
+// hide write review page
 function hideReview() {
     var x = document.getElementById("post-review1");
     var y = document.getElementById("post-review");
@@ -86,15 +94,16 @@ function hideReview() {
 }
 
 
-class Post {
-    constructor(id, img_url, title, content) {
-        this.id = id;
-        this.img_url = img_url;
-        this.title = title;
-        this.content = content;
-    }
-}
+// class Post {
+//     constructor(id, img_url, title, content) {
+//         this.id = id;
+//         this.img_url = img_url;
+//         this.title = title;
+//         this.content = content;
+//     }
+// }
 
+//create post
 function create_post() {
     const urls = new Array();
     url1 = "img/post1.jpg";
@@ -129,6 +138,7 @@ function create_post() {
 }
 
 
+// account choose home page
 function choose_home(id) {
     document.getElementById(id).style.backgroundColor = "#f2f2f2";
 
@@ -157,6 +167,7 @@ function choose_home(id) {
 
 }
 
+// show account home page
 function show_account_home(tips) {
     if (tips == "account") {
     document.getElementById("main_container_right_menu").style.display = "none";
@@ -169,8 +180,8 @@ function show_account_home(tips) {
     }
 }
 
+
 window.onload = function() {
     
-
    create_post();
 }
