@@ -99,7 +99,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('./img/post3.jpeg');
+    background-image: url('../img/post3.jpeg');
     background-size: cover; /* or contain 如果图高超过一定大小就设置contain */
     background-attachment: scroll; /* or scroll */
     background-position: center;
